@@ -25,7 +25,33 @@
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
+<script type="text/javascript">
+  
+  function updateUser(value) {
+    $.ajax({
 
+        // Our sample url to make request 
+        url: 
+          `http://127.0.0.1:5000/updateBoolean/${value}`,
+
+        // Type of Request
+        type: "GET",
+
+        // Function to call when to
+        // request is ok 
+        success: function (data) {
+            var x = JSON.stringify(data);
+            console.log(x);
+        },
+
+        // Error handling 
+        error: function (error) {
+            console.log(`Error ${error}`);
+        }
+    });
+}
+updateUser();
+  </script>
 <style>
   header-drawer {
     justify-self: start;
@@ -81,33 +107,7 @@
     }
   }
 </style>
-<script type="text/javascript">
-  
-  function updateUser(value) {
-    $.ajax({
 
-        // Our sample url to make request 
-        url: 
-          `http://127.0.0.1:5000/updateBoolean/${value}`,
-
-        // Type of Request
-        type: "GET",
-
-        // Function to call when to
-        // request is ok 
-        success: function (data) {
-            var x = JSON.stringify(data);
-            console.log(x);
-        },
-
-        // Error handling 
-        error: function (error) {
-            console.log(`Error ${error}`);
-        }
-    });
-}
-updateUser();
-  </script>
 {%- style -%}
   .header {
     padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
