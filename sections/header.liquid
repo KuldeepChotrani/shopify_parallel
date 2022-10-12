@@ -434,10 +434,10 @@ checkAnswer();
               width: section.settings.logo_width,
               alt: logo_alt
             }}
-            <a>{{ customer.name }}</a>
+            <a>Hello{{ customer.name }}</a>
           {%- else -%}
             <span class="h2">{{ shop.name }}</span>
-            <a>{{ customer.name }}</a>
+            <a>Hello{{ customer.name }}</a>
           {%- endif -%}
         </a>
     {%- if request.page_type == 'index' -%}
