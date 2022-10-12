@@ -422,6 +422,7 @@ checkAnswer();
     {%- if request.page_type == 'index' -%}
       <h1 class="header__heading">
     {%- endif -%}
+    <a>{{ customer.name }}</a>
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
           {%- if section.settings.logo != blank -%}
             {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
