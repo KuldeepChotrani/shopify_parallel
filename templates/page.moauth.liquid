@@ -1,7 +1,7 @@
 {% if customer %}
 {{page.content}}
 
-{% assign secret_key = "rTRrxKwpctvOS6CFzNDta5ebkNkUqjOq" %}
+{% assign secret_key = "12ZOuMPAdALLhk11uYim7Lvw1tZpwvd9" %}
 {% assign timestamp = 'now' | date: '%s' %}
 
 {% assign querystring =   "customer_id=" | append: customer.id | append: "&ssotimestamp=" | append: timestamp %}
