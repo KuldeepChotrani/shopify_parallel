@@ -12,7 +12,7 @@
   <h1>
     {{ 'customer.register.title' | t }}
   </h1>
-  {%- form 'create_customer', novalidate: 'novalidate' -%}
+  {%- form 'create_customer', novalidate: 'novalidate',return_to: routes.account_url -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
         <svg aria-hidden="true" focusable="false" role="presentation">
@@ -113,8 +113,8 @@
         {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
       </span>
     {%- endif -%}
-    <a href="https://user.dev.parallelhealth.io">
+    <button>
       {{ 'customer.register.submit' | t }}
-    </a>
+    </button>
   {%- endform -%}
 </div>
