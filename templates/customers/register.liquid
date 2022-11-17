@@ -12,7 +12,7 @@
   <h1>
     {{ 'customer.register.title' | t }}
   </h1>
-  {%- form 'create_customer', novalidate: 'novalidate',return_to: "https://user.dev.parallelhealth.io" -%}
+  {%- form 'create_customer', novalidate: 'novalidate',return_to: 'https://user.dev.parallelhealth.io' -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
         <svg aria-hidden="true" focusable="false" role="presentation">
