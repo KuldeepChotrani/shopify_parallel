@@ -15,7 +15,7 @@
   <p>
     {{ 'customer.activate_account.subtext' | t }}
   </p>
-  {%- form 'activate_customer_password' -%}
+  {%- form 'activate_customer_password' , return_to: '/pages/customDashboard' -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
         <svg aria-hidden="true" focusable="false" role="presentation">
