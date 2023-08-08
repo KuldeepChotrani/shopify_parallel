@@ -1,13 +1,64 @@
-
-
+{{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
 {% endstylesheet %}
 
 {% javascript %}
+function Marquee(selector, speed) {
+  const parentSelector = document.querySelector(selector);
+  const clone = parentSelector.innerHTML;
+  const firstElement = parentSelector.children[0];
+  let i = 0;
+  console.log(firstElement);
+  parentSelector.insertAdjacentHTML('beforeend', clone);
+  parentSelector.insertAdjacentHTML('beforeend', clone);
+
+  setInterval(function () {
+    firstElement.style.marginLeft = `-${i}px`;
+    if (i > firstElement.clientWidth) {
+      i = 0;
+    }
+    i = i + speed;
+  }, 0);
+}
+
+window.addEventListener('load', Marquee('.marquee', 0.2))
+
 {% endjavascript %}
 
 <div class="page-width page-margin center">
   <h1>
     Frequently Asked Questions
   </h1>
+  <div class="grid-container">
+    <div class="grid-item">
+      <h4 class="question">Skin Microbiome Constellation & Type??</h4>
+      <h5 class="answer">Your skin microbiome type is determined by a variety of
+        factors, including your hydration level, skin microbial diversity, and microbial
+        ecosystem makeup. It can alter due to lifestyle and environmental factors.</h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="question">Skin Hydration Level??</h4>
+      <h5 class="answer">Your hydration levels are a reflection of the moisture and oil
+        we detect from your oil strips. An ideal level is in the mid to upper range
+        (7-8). Your cheek and forehead can sometimes have drastically different levels.</h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="question">Skin Microbiome Age??</h4>
+      <h5 class="answer">YComparing your skin against a large, diverse pool
+        in our database, your listed skin age is a reflection of a variety of
+        factors, including your microbial diversity, hydration level, and balance
+        of “good” vs “bad” bacteria.</h5>
+    </div>
+
+    <div class="grid-item">
+      <h4 class="question">Top 5 Good and Bad Skin Microbes??</h4>
+      <h5 class="answer">We present information about your most abundant good and bad skin microbes.</h5>
+    </div>
+  </div>
+</div>
+
+ <div class="marquee">
+  <h2>discoloration * rosacea * eczema * melasma * </h2>
 </div>
