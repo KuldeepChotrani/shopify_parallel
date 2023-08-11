@@ -34,6 +34,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
     document.querySelectorAll('.increase-quantity').forEach(function(button) {
       button.addEventListener('click', function() {
         var variantId = button.getAttribute('data-variant-id');
+        console.log('variant id ', variantId);
         Shopify.addItem(variantId, 1);
       });
     });
