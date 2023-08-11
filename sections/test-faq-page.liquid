@@ -5,6 +5,7 @@
 {% javascript %}
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -25,35 +26,32 @@ function Marquee(selector, speed) {
 window.addEventListener('load', Marquee('.marquee', 0.2))
 
 
+
 {% endjavascript %}
 
-<!--
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.increase-quantity').forEach(function(button) {
-        button.addEventListener('click', function() {
-          var variantId = button.getAttribute('data-variant-id');
-          Shopify.addItem(variantId, 1);
-        });
-      });
-      document.querySelectorAll('.decrease-quantity').forEach(function(button) {
-        button.addEventListener('click', function() {
-          var variantId = button.getAttribute('data-variant-id');
-          Shopify.changeItem(variantId, -1);
-        });
-      });
-
-      document.querySelectorAll('.remove-item').forEach(function(button) {
-        button.addEventListener('click', function() {
-          var variantId = button.getAttribute('data-variant-id');
-          Shopify.removeItem(variantId);
-        });
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.increase-quantity').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var variantId = button.getAttribute('data-variant-id');
+        Shopify.addItem(variantId, 1);
       });
     });
-  </script>
--->
+    document.querySelectorAll('.decrease-quantity').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var variantId = button.getAttribute('data-variant-id');
+        Shopify.changeItem(variantId, -1);
+      });
+    });
 
-{{ cart | json }}
+    document.querySelectorAll('.remove-item').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var variantId = button.getAttribute('data-variant-id');
+        Shopify.removeItem(variantId);
+      });
+    });
+  });
+</script>
 
 <div class="page-width page-margin center">
   <div class="cart-grid">
