@@ -19,8 +19,6 @@
   }
 {%- endstyle -%}
 
-{{ cart |json }}
-
 {%- unless settings.cart_type == 'drawer' -%}
   <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 {%- endunless -%}
