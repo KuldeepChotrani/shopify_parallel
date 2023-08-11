@@ -1,8 +1,36 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
+    .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .grid-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .item-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .item-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .item-details h3 {
+    margin: 10px 0;
+  }
 {% endstylesheet %}
 
 {% javascript %}
+  
+  
   
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
@@ -22,6 +50,8 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
+
 
 {% endjavascript %}
 
@@ -51,6 +81,25 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 </script>
 
 <div class="page-width page-margin center">
+  <div class="collection-page">
+    <h1>{{ collection.title }}</h1>
+    <div class="collection-grid">
+      {% for product in collection.products %}
+        <div class="grid-item">
+          <a href="{{ product.url }}" class="item-link">
+            <div class="item-image">
+              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            </div>
+            <div class="item-details">
+              <h3>{{ product.title }}</h3>
+              <p>Price: {{ product.price | money }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
   <h1>Cart Items</h1>
   <div class="cart-grid">
     {% for item in cart.items %}
