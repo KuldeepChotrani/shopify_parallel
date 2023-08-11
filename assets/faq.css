@@ -28,30 +28,31 @@
   color: #000000;
   font-size: 2em;
 }
-.cart-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+.cart-items-container {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-.cart-item {
+.cart-item-card {
+  display: flex;
+  align-items: center;
   border: 1px solid #ddd;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+  flex: 0 0 auto;
+  margin-right: 20px;
 }
 
 .cart-item-image img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100px;
+  max-height: 100px;
 }
 
-.cart-item-title {
-  font-size: 1.2rem;
-  margin: 5px 0;
-}
-
-.cart-item-quantity,
-.cart-item-price {
-  margin: 5px 0;
+.cart-item-details {
+  flex: 1 1 auto;
 }
