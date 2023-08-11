@@ -56,32 +56,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   });
 </script>
 
-{% capture spaces %}{% for i in (1..indent) %} {% endfor %}{% endcapture %}
-
-{% capture indented_json %}
-  {{
-    cart
-    | replace: '": "', '": "'
-    | replace: '", "', '", "'
-    | replace: '": "', '": "'
-    | replace: '", "', '", "'
-    | replace: '": "', '": "'
-    | replace: '", "', '", "'
-    | replace: '": "', '": "'
-    | replace: '", "', '", "'
-    | replace: '": "', '": "'
-    | replace: '", "', '", "'
-    | replace: '", "', '", "'
-    | replace: '": "', '": "'
-    | replace: '", "', '", "'
-    | replace: '", "', '", "'
-    | replace: '": "', '": "'
-    | replace: '", "', '", "'
-    | replace: '", "', '", "'
-  }}
-{% endcapture %}
-
-{{ indented_json | json }}
+{{ cart | json }}
 
 <div class="page-width page-margin center">
   <div class="cart-grid">
