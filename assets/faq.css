@@ -31,7 +31,7 @@
 
   .cart-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: auto auto;
     gap: 20px;
   }
 
