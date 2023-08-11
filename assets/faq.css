@@ -37,7 +37,6 @@
 .cart-item-card {
   display: flex;
   align-items: center;
-  border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -49,8 +48,8 @@
 }
 
 .cart-item-image img {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .cart-item-details {
