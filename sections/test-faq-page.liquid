@@ -3,10 +3,7 @@
 {% endstylesheet %}
 
 {% javascript %}
-  
-  
-  
-  
+ 
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -25,9 +22,6 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
-
-
-
 
 {% endjavascript %}
 
