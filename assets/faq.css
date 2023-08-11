@@ -43,12 +43,13 @@
 }
 
 .cart-item-image {
-  flex: 0 0 auto;
+  flex: 1;
   margin-right: 20px;
 }
 
 .cart-item-image img {
-  max-width: 100%;
+  max-width: 200px;
+  width: 200px;
   height: auto;
 }
 
