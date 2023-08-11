@@ -1,3 +1,4 @@
+<section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}">
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
 {% endstylesheet %}
@@ -24,6 +25,9 @@ function Marquee(selector, speed) {
 window.addEventListener('load', Marquee('.marquee', 0.2))
 
 {% endjavascript %}
+
+
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
   {{ product | json }}
 
@@ -64,3 +68,4 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
  <div class="marquee">
   <h2>discoloration * rosacea * eczema * melasma * </h2>
 </div>
+</section>
