@@ -5,7 +5,6 @@
 {% javascript %}
   
   
-  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -25,23 +24,56 @@ function Marquee(selector, speed) {
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
 
+
 {% endjavascript %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.increase-quantity').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var variantId = button.getAttribute('data-variant-id');
+        Shopify.addItem(variantId, 1);
+      });
+    });
+
+    document.querySelectorAll('.decrease-quantity').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var variantId = button.getAttribute('data-variant-id');
+        Shopify.changeItem(variantId, -1);
+      });
+    });
+
+    document.querySelectorAll('.remove-item').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var variantId = button.getAttribute('data-variant-id');
+        Shopify.removeItem(variantId);
+      });
+    });
+  });
+</script>
 
 <div class="page-width page-margin center">
   <div class="cart-grid">
     {% for item in cart.items %}
       <div class="cart-item">
-        <div class="cart-item-image">
-          <img loading="lazy" src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
+        <div class="item-image">
+          <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
         </div>
-        <div class="cart-item-details">
+        <div class="item-details">
           <h3>{{ item.title }}</h3>
-          <p>{{ item.variant.title }}</p>
           <p>Quantity: {{ item.quantity }}</p>
           <p>Price: {{ item.price | money }}</p>
+          <button class="increase-quantity" data-variant-id="{{ item.variant_id }}">+</button>
+          <button class="decrease-quantity" data-variant-id="{{ item.variant_id }}">-</button>
+          <button class="remove-item" data-variant-id="{{ item.variant_id }}">Remove</button>
         </div>
       </div>
     {% endfor %}
+  </div>
+
+  <div class="cart-subtotal">
+    <p>Subtotal: {{ cart.total_price | money }}</p>
+    <a href="/checkout" class="checkout-button">Proceed to Checkout</a>
   </div>
   <h1>Frequently Asked Questions</h1>
   <div class="grid-container">
