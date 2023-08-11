@@ -43,7 +43,8 @@
   }
 
   .cart-item-image img {
-    max-width: 300px;
+    /* max-width: 300px; */
+    width: auto;
     height: 300px;
   }
 
