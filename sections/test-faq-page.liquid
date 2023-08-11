@@ -5,6 +5,7 @@
 {% javascript %}
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -22,23 +23,16 @@ function Marquee(selector, speed) {
     i = i + speed;
   }, 0);
 }
-
 window.addEventListener('load', Marquee('.marquee', 0.2))
 
-
-
 {% endjavascript %}
-
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-
-{{ cart | json }}
 
 <div class="page-width page-margin center">
   <div class="cart-grid">
     {% for item in cart.items %}
       <div class="cart-item">
         <div class="cart-item-image">
-          <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
+          <img loading="lazy" src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
         </div>
         <div class="cart-item-details">
           <h3>{{ item.title }}</h3>
