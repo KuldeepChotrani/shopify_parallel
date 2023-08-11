@@ -22,7 +22,7 @@
     }
   {%- endstyle -%}
 
-  {{ product }}
+  {{ product | json }}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
