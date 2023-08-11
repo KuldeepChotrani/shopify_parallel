@@ -48,8 +48,8 @@
 }
 
 .cart-item-image img {
-  width: 200px;
-  height: 200px;
+  width: auto;
+  height: auto;
 }
 
 .cart-item-details {
