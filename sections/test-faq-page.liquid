@@ -31,13 +31,20 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 {{ cart | json }}
 
 <div class="page-width page-margin center">
-{% for item in cart.items %}
-  <div class="cart-item">
-    <h4>{{ item.title }}</h4>
-    <p>Price: {{ item.price | money }}</p>
-    <p>Quantity: {{ item.quantity }}</p>
-  </div>
-{% endfor %}
+<div class="cart-grid">
+  {% for item in cart.items %}
+    <div class="cart-item">
+      <div class="cart-item-image">
+        <img loading="lazy" src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}" />
+      </div>
+      <div class="cart-item-details">
+        <h4 class="cart-item-title">{{ item.title }}</h4>
+        <p class="cart-item-quantity">Quantity: {{ item.quantity }}</p>
+        <p class="cart-item-price">{{ item.price | money }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
   <h1>
     Frequently Asked Questions
   </h1>
