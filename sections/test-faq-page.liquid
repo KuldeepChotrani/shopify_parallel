@@ -4,6 +4,7 @@
 
 {% javascript %}
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -22,6 +23,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 {% endjavascript %}
 
@@ -64,11 +66,10 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
           <h3>{{ item.title }}</h3>
           <p>Quantity: {{ item.quantity }}</p>
           <p>Price: {{ item.price | money }}</p>
-          {% comment %}
-            <button class="increase-quantity" data-variant-id="{{ item.variant_id }}">+</button>
-            <button class="decrease-quantity" data-variant-id="{{ item.variant_id }}">-</button>
-            <button class="remove-item" data-variant-id="{{ item.variant_id }}">Remove</button>
-          {% endcomment %}
+          <button class="increase-quantity" data-variant-id="{{ item.variant_id }}">+</button>
+          <button class="decrease-quantity" data-variant-id="{{ item.variant_id }}">-</button>
+          <button class="remove-item" data-variant-id="{{ item.variant_id }}">Remove</button>
+
           <div class="cart-item__quantity-wrapper">
             <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
               {{ 'products.product.quantity.label' | t }}
