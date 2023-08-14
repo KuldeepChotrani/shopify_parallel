@@ -1,43 +1,111 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
+    /* .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-  .product-item {
-    background-color: #ffffff;
-    border: 1px solid #e2e2e2;
-    padding: 20px;
-  }
+    .product-item {
+      background-color: #ffffff;
+      border: 1px solid #e2e2e2;
+      padding: 20px;
+    }
 
-  .product-link {
-    text-decoration: none;
-    color: #333;
+    .product-link {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-image {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      margin: 0;
+    } */
+    .product-details-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 40px;
+    margin: 40px 0;
   }
 
-  .product-image {
+  .product-image img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-info {
+    flex: 1;
   }
 
   .product-title {
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 2rem;
+    margin: 0 0 10px;
+    color: #333;
   }
 
   .product-price {
+    font-size: 1.5rem;
+    margin: 0 0 20px;
+    color: #e91e63;
+  }
+
+  .product-description {
     font-size: 1.1rem;
-    margin: 0;
+    margin-bottom: 30px;
+    color: #666;
+  }
+
+  .add-to-cart-form {
+    display: flex;
+    align-items: center;
+  }
+
+  .quantity-label {
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+
+  .quantity-input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .add-to-cart-button {
+    background-color: #e91e63;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .add-to-cart-button:hover {
+    background-color: #c2185b;
   }
 {% endstylesheet %}
 
 {% javascript %}
+  
+  
   
   
 function Marquee(selector, speed) {
@@ -58,6 +126,8 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
+
 
 
 {% endjavascript %}
@@ -90,22 +160,48 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 {{ collections.all.products[0] | json }}
 
 <div class="page-width page-margin center">
-  <div class="product-grid">
-    {% for product in collections.all.products %}
-      {% if product.id == 7787919245469 %}
-        <div class="product-item">
-          <a href="{{ product.url }}" class="product-link">
-            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
-            <h2 class="product-title">{{ product.title }}</h2>
-            <h3 class="product-title">{{ product.description }}</h3>
-            <p class="product-price">{{ product.price | money }}</p>
-            <p class="product-title" >id : {{ product.id }}</p>
-            <p class="product-title" >Texture : {{ product.metafields.custom.texture }}</p>
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
+  {% assign productId = 7787919245469 %}
+  <!-- Replace with the desired product ID -->
+  {% assign product = all_products[productId] %}
+
+  <div class="product-details-container">
+    <div class="product-image">
+      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+    </div>
+    <div class="product-info">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-price">{{ product.price | money }}</p>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-description">Texture : {{ product.metafields.custom.texture }}</p>
+      <p class="product-description">Sold by {{ product.vendor }}</p>
+      <form action="/cart/add" method="post" class="add-to-cart-form">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <label for="quantity" class="quantity-label">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
+        <button type="submit" class="add-to-cart-button">Add to Cart</button>
+      </form>
+    </div>
   </div>
+
+  {% comment %}
+    <div class="product-grid">
+      {% for product in collections.all.products %}
+        {% if product.id == 7787919245469 %}
+          <div class="product-item">
+            <a href="{{ product.url }}" class="product-link">
+              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
+              <h2 class="product-title">{{ product.title }}</h2>
+              <h3 class="product-title">{{ product.description }}</h3>
+              <p class="product-price">{{ product.price | money }}</p>
+              <p class="product-title">id : {{ product.id }}</p>
+              <p class="product-title">Texture : {{ product.metafields.custom.texture }}</p>
+              <h3 class="product-title">Sold by {{ product.vendor }}</h3>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endcomment %}
 
   <h1>Cart Items</h1>
   <div class="cart-grid">
