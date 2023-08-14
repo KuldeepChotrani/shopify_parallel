@@ -136,7 +136,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   {% endcomment %}
 
   {% for product in collections.all.products %}
-    {% if product.tags == 'boots' %}
+    {% if product.tags contains 'boots' %}
       <div class="product-grid">
         <div class="product-details-container">
           <div class="product-image">
