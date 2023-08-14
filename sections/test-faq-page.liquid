@@ -225,7 +225,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
     {% for item in cart.items %}
       <div class="cart-item">
         <div class="item-image">
-          <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
+          <img loading="lazy" src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
         </div>
         <div class="item-details">
           <h3>{{ item.title }}</h3>
