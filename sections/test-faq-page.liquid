@@ -141,7 +141,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
         <div class="product-details-container">
           <div class="product-image">
             {% comment %}<img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}"> {% endcomment %}
-            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" id="variant-image">
+            <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}" id="variant-image">
           </div>
           <div class="product-info">
             <a href="{{ product.url }}" class="product-link">
