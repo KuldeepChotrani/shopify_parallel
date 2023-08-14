@@ -136,7 +136,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
             </a>
             <p class="product-price">{{ product.price | money }}</p>
             <p class="product-description">{{ product.description }}</p>
-            {% if product.metafields.custom.texture %}<p class="product-description">Texture : {{ product.metafields.custom.texture }}</p>{% endif %}
+            {% if product.metafields.custom.texture %}<span class="product-description">Texture : {{ product.metafields.custom.texture }}</span>{% endif %}
             <p class="product-description">Sold by {{ product.vendor }}</p>
             <form action="/cart/add" method="post" class="add-to-cart-form">
               {% comment %} <input type="hidden" name="id" value="{{ product.variants.first.id }}"> {% endcomment %}
