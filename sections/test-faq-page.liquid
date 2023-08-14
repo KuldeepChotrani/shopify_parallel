@@ -1,8 +1,6 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
     /*
-
-
     .product-item {
       background-color: #ffffff;
       border: 1px solid #e2e2e2;
@@ -40,7 +38,7 @@
     }
     .product-details-container {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     margin: 40px 0;
   }
 
@@ -64,13 +62,13 @@
 
   .product-price {
     font-size: 1.5rem;
-    margin: 0 0 20px;
+    margin: 0 0 15px;
     color: #e91e63;
   }
 
   .product-description {
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #666;
   }
 
@@ -113,6 +111,7 @@
   
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -131,6 +130,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 
 
