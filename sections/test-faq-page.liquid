@@ -183,7 +183,6 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
         <form action="/cart/add" method="post" class="add-to-cart-form">
           <input type="hidden" name="id" value="{{ product.variants.first.id }}">
           <label for="quantity" class="quantity-label">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
           <button type="submit" class="add-to-cart-button">Add to Cart</button>
         </form>
       </div>
