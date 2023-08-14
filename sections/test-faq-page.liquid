@@ -36,6 +36,13 @@
       flex-direction: column;
       gap: 20px;
     }
+    .product-link {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .product-details-container {
     display: flex;
     gap: 30px;
@@ -112,6 +119,7 @@
   
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -130,6 +138,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 
 
@@ -175,8 +184,10 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
       <div class="product-grid">
         <div class="product-details-container">
           <div class="product-image">
-            {% comment %}<img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}"> {% endcomment %}
-            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" id="variant-image">
+            <a href="{{ product.url }}" class="product-link">
+              {% comment %}<img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}"> {% endcomment %}
+              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" id="variant-image">
+            </a>
           </div>
           <div class="product-info">
             <h1 class="product-title">{{ product.title }}</h1>
