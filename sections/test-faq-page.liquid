@@ -163,7 +163,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 
 <div class="page-width page-margin center">
   {% assign all_products = collections.all.products %}
-  {% assign filtered_products = all_products | where: 'id', '7787919245469' %}
+  {% assign filtered_products = collections.all.products | where: 'id', '7787919245469' %}
 
   {% for product in filtered_products %}
     <div class="product-details-container">
