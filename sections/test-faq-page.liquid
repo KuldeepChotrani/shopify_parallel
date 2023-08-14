@@ -52,7 +52,8 @@
   }
 
   .product-info {
-    /* flex: 1; */
+    flex: 1;
+    text-align: initial;
   }
 
   .product-title {
@@ -76,7 +77,6 @@
   .add-to-cart-form {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   .quantity-label {
@@ -108,12 +108,6 @@
 {% endstylesheet %}
 
 {% javascript %}
-  
-  
-  
-  
-  
-  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -132,12 +126,6 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
-
-
-
-
-
-
 {% endjavascript %}
 
 <script>
@@ -168,8 +156,8 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 <!-- {{ collections.all.products[0] | json }} -->
 
 <div class="page-width page-margin center">
-  {% assign all_products = collections.all.products %}
-  {% assign filtered_products = collections.all.products | where: 'id', '7787919245469' %}
+  <!-- {% assign all_products = collections.all.products %}
+  {% assign filtered_products = collections.all.products | where: 'id', '7787919245469' %} -->
 
   {% for product in collections.all.products %}
     {% if product.id == 7787919245469 %}
