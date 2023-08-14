@@ -95,6 +95,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
           <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
           <h2 class="product-title">{{ product.title }}</h2>
           <p class="product-price">{{ product.price | money }}</p>
+          <p>id : {{ product.product_id }}</p>
           <p>texture : {{ product.metafields.custom.texture }}</p>
         </a>
       </div>
