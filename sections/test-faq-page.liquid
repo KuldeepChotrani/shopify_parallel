@@ -85,12 +85,12 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   });
 </script>
 
-{{ collections.all.products | json }}
+<!-- {{ collections.all.products | json }} -->
 
 <div class="page-width page-margin center">
   <div class="product-grid">
     {% for product in collections.all.products %}
-      {% if product.product_id == 7787919245469 %}
+      <!-- {% if product.product_id == 7787919245469 %} -->
       <div class="product-item">
         <a href="{{ product.url }}" class="product-link">
           <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
@@ -99,7 +99,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
           <p>texture : {{ product.metafields.custom.texture }}</p>
         </a>
       </div>
-    {% endif %}
+    <!-- {% endif %} -->
     {% endfor %}
   </div>
 
