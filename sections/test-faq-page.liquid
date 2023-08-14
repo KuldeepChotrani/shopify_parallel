@@ -182,7 +182,6 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
         <p class="product-description">Sold by {{ product.vendor }}</p>
         <form action="/cart/add" method="post" class="add-to-cart-form">
           <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-          <label for="quantity" class="quantity-label">Quantity:</label>
           <button type="submit" class="add-to-cart-button">Add to Cart</button>
         </form>
       </div>
