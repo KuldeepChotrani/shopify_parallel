@@ -76,7 +76,9 @@
 
   .add-to-cart-form {
     display: flex;
-    align-items: center;
+        align-items: flex-start;
+    gap: 20px;
+
   }
 
   .quantity-label {
@@ -109,6 +111,8 @@
 
 {% javascript %}
   
+  
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -127,6 +131,8 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
+
 
 {% endjavascript %}
 
@@ -155,7 +161,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   });
 </script>
 
-<!-- {{ collections.all.products[0] | json }} -->
+{% comment %} {{ collections.all.products[0] | json }}   {% endcomment %}
 
 <div class="page-width page-margin center">
   {% comment %}
