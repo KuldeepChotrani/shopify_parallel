@@ -39,6 +39,7 @@
 
 {% javascript %}
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -57,6 +58,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 {% endjavascript %}
 
@@ -90,17 +92,17 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 <div class="page-width page-margin center">
   <div class="product-grid">
     {% for product in collections.all.products %}
-      <div class="product-item">
-        <a href="{{ product.url }}" class="product-link">
-          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
-          <h2 class="product-title">{{ product.title }}</h2>
-          <p class="product-price">{{ product.price | money }}</p>
-          <p>id : {{ product.id }}</p>
-          {% if product.id == 7787919245469 %}
-          <p>texture : {{ product.metafields.custom.texture }}</p>
-          {% endif %}
-        </a>
-      </div>
+      {% if product.id == 7787919245469 %}
+        <div class="product-item">
+          <a href="{{ product.url }}" class="product-link">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
+            <h2 class="product-title">{{ product.title }}</h2>
+            <p class="product-price">{{ product.price | money }}</p>
+            <p>id : {{ product.id }}</p>
+            <p>texture : {{ product.metafields.custom.texture }}</p>
+          </a>
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 
