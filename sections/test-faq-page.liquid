@@ -85,7 +85,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   });
 </script>
 
-{{ collections.all.products[0] | json }}
+<!-- {{ collections.all.products[0] | json }} -->
 
 <div class="page-width page-margin center">
   <div class="product-grid">
@@ -96,7 +96,9 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
           <h2 class="product-title">{{ product.title }}</h2>
           <p class="product-price">{{ product.price | money }}</p>
           <p>id : {{ product.id }}</p>
+          {% if product.id == 7787919245469 %}
           <p>texture : {{ product.metafields.custom.texture }}</p>
+          {% endif %}
         </a>
       </div>
     {% endfor %}
