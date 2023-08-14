@@ -1,10 +1,7 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
-    /* .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
+    /*
+  
 
     .product-item {
       background-color: #ffffff;
@@ -35,6 +32,12 @@
       font-size: 1.1rem;
       margin: 0;
     } */
+
+   .product-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
     .product-details-container {
     display: flex;
     gap: 40px;
@@ -165,7 +168,8 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   {% assign all_products = collections.all.products %}
   {% assign filtered_products = collections.all.products | where: 'id', '7787919245469' %}
 
-  {% for product in filtered_products %}
+  {% for product in collections.all.products %}
+    <div class="product-grid">
     <div class="product-details-container">
       <div class="product-image">
         <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
@@ -183,6 +187,7 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
           <button type="submit" class="add-to-cart-button">Add to Cart</button>
         </form>
       </div>
+    </div>
     </div>
   {% endfor %}
 
