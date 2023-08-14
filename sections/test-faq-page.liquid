@@ -1,36 +1,5 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
-    /*
-    .product-item {
-      background-color: #ffffff;
-      border: 1px solid #e2e2e2;
-      padding: 20px;
-    }
-
-    .product-link {
-      text-decoration: none;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .product-image {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-
-    .product-title {
-      font-size: 1.2rem;
-      margin: 0;
-    }
-
-    .product-price {
-      font-size: 1.1rem;
-      margin: 0;
-    } */
-
    .product-grid {
       display: flex;
       flex-direction: column;
@@ -39,9 +8,6 @@
     .product-link {
       /* text-decoration: none; */
       color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
     .product-details-container {
     display: flex;
@@ -115,7 +81,6 @@
 
 {% javascript %}
   
-  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -134,7 +99,6 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
-
 
 {% endjavascript %}
 
@@ -202,26 +166,6 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
       </div>
     {% endif %}
   {% endfor %}
-
-  {% comment %}
-    <div class="product-grid">
-      {% for product in collections.all.products %}
-        {% if product.id == 7787919245469 %}
-          <div class="product-item">
-            <a href="{{ product.url }}" class="product-link">
-              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
-              <h2 class="product-title">{{ product.title }}</h2>
-              <h3 class="product-title">{{ product.description }}</h3>
-              <p class="product-price">{{ product.price | money }}</p>
-              <p class="product-title">id : {{ product.id }}</p>
-              <p class="product-title">Texture : {{ product.metafields.custom.texture }}</p>
-              <h3 class="product-title">Sold by {{ product.vendor }}</h3>
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  {% endcomment %}
 
   <h1>Cart Items</h1>
   <div class="cart-grid">
