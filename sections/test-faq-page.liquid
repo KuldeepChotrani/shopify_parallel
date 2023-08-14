@@ -108,6 +108,7 @@
   
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -126,6 +127,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 
 
@@ -160,29 +162,29 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 <!-- {{ collections.all.products[0] | json }} -->
 
 <div class="page-width page-margin center">
-  {% assign productId = 7787919245469 %}
-  <!-- Replace with the desired product ID -->
-  {% assign product = collections.all.products[productId] %}
-  
+  {% assign all_products = collections.all.products %}
+  {% assign filtered_products = all_products | where: 'id', '7787919245469' %}
 
-  <div class="product-details-container">
-    <div class="product-image">
-      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+  {% for product in filtered_products %}
+    <div class="product-details-container">
+      <div class="product-image">
+        <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+      </div>
+      <div class="product-info">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <p class="product-price">{{ product.price | money }}</p>
+        <p class="product-description">{{ product.description }}</p>
+        <p class="product-description">Texture : {{ product.metafields.custom.texture }}</p>
+        <p class="product-description">Sold by {{ product.vendor }}</p>
+        <form action="/cart/add" method="post" class="add-to-cart-form">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <label for="quantity" class="quantity-label">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
+          <button type="submit" class="add-to-cart-button">Add to Cart</button>
+        </form>
+      </div>
     </div>
-    <div class="product-info">
-      <h1 class="product-title">{{ product.title }}</h1>
-      <p class="product-price">{{ product.price | money }}</p>
-      <p class="product-description">{{ product.description }}</p>
-      <p class="product-description">Texture : {{ product.metafields.custom.texture }}</p>
-      <p class="product-description">Sold by {{ product.vendor }}</p>
-      <form action="/cart/add" method="post" class="add-to-cart-form">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <label for="quantity" class="quantity-label">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
-        <button type="submit" class="add-to-cart-button">Add to Cart</button>
-      </form>
-    </div>
-  </div>
+  {% endfor %}
 
   {% comment %}
     <div class="product-grid">
