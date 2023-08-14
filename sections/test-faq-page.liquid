@@ -99,8 +99,8 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
             <h2 class="product-title">{{ product.title }}</h2>
             <h3 class="product-title">{{ product.description }}</h3>
             <p class="product-price">{{ product.price | money }}</p>
-            <p>id : {{ product.id }}</p>
-            <p>texture : {{ product.metafields.custom.texture }}</p>
+            <p class="product-title" >id : {{ product.id }}</p>
+            <p class="product-title" >Texture : {{ product.metafields.custom.texture }}</p>
           </a>
         </div>
       {% endif %}
