@@ -42,6 +42,7 @@
   font-family: Neue-Haas Regular, sans-serif;
   font-size: 22px;
   line-height: 36px;
+  max-width: 520px;
 }
 @media screen and (max-width: 767px) {
   .feature-heading {
