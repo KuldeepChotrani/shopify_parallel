@@ -73,6 +73,7 @@
   
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -91,6 +92,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 
 
@@ -139,14 +141,22 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   </h6>
 </div>
 <div class="section-2">
-  <div class="section-2-grid-1">
-    <img class="hexagon-image" src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64ae9387a955398d008ffd14_hex-face.png" />
-  </div>
-   <div class="section-2-grid-2">
-    <h1 class="feature-heading">An imbalanced skin microbiome is the cause of skin issues.</h1>
-  <h6 class="feature-subheading">
-    The skin microbiome is an ecosystem of bacteria, viruses, fungi, and other microbes that inhabit your skin. When your microbiome is in balance, your skin is resilient, clear, and radiant. When it's not in balance, a slew of issues can unfold, including blemishes & breakouts, inflammation, redness, sensitivity, changes in texture, discoloration, and accelerated aging.
-  </h6>
+  <div class="section-2-grid">
+    <div class="section-2-grid-1">
+      <img
+        class="hexagon-image"
+        src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64ae9387a955398d008ffd14_hex-face.png"
+      >
+    </div>
+    <div class="section-2-grid-2">
+      <h1 class="feature-heading">An imbalanced skin microbiome is the cause of skin issues.</h1>
+      <h6 class="feature-subheading">
+        The skin microbiome is an ecosystem of bacteria, viruses, fungi, and other microbes that inhabit your skin. When
+        your microbiome is in balance, your skin is resilient, clear, and radiant. When it's not in balance, a slew of
+        issues can unfold, including blemishes & breakouts, inflammation, redness, sensitivity, changes in texture,
+        discoloration, and accelerated aging.
+      </h6>
+    </div>
   </div>
 </div>
 
