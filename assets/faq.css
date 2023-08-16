@@ -82,6 +82,39 @@
   object-fit: contain;
 }
 
+.carousel-container {
+  background-color: #e18672;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Styles for the carousel wrapper */
+.carousel-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scroll 20s infinite linear;
+}
+
+/* Styles for individual carousel items */
+.carousel-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Animation keyframes for scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 @media screen and (max-width: 767px) {
   .feature-heading {
     font-size: 28px;
