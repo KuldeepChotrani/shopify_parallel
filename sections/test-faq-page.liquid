@@ -1,6 +1,5 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
-
    .product-grid {
       display: flex;
       flex-direction: column;
@@ -71,6 +70,7 @@
 {% javascript %}
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -89,6 +89,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 
 {% endjavascript %}
@@ -131,14 +132,12 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
   </video>
 
   <!-- Text content -->
-  <div class="feature-text-container">
-    <h1 class="feature-heading">
-      At Parallel, we target well-aging and balance, grounded in science and innovation.
-    </h1>
-    <h6 class="feature-subheading">
-      We believe the future is precision medicine, and what we're building is vital to that vision
-    </h6>
-  </div>
+  <!-- <div class="feature-text-container"> -->
+  <h1 class="feature-heading">At Parallel, we target well-aging and balance, grounded in science and innovation.</h1>
+  <h6 class="feature-subheading">
+    We believe the future is precision medicine, and what we're building is vital to that vision
+  </h6>
+  <!-- </div> -->
 </div>
 
 <div class="page-width page-margin center">
