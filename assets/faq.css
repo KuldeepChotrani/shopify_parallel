@@ -103,6 +103,9 @@
   padding: 10px 20px;
   font-size: 48px;
 }
+.carousel-item > img {
+  padding: 0 10px;
+}
 
 /* Animation keyframes for scrolling */
 @keyframes scroll {
@@ -144,6 +147,9 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+  }
+  .carousel-item {
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 479px) {
