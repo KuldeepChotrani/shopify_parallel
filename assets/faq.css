@@ -94,10 +94,9 @@
   }
   .section-2 {
     background-image: url("https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b112dfa27271e24934e9e0_face-bg.jpg");
-    background-position: 30% 0;
-    background-size: cover;
-    /* padding-top: 45vh; */
-    padding-top: 45vh;
+    background-position: 50% 0;
+    background-size: 100%;
+    padding-top: 85%;
   }
   .section-2-grid-1 {
     width: 100%;
@@ -131,8 +130,8 @@
   .section-2 {
     background-image: url("https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b112dfa27271e24934e9e0_face-bg.jpg");
     background-position: 50% 0;
-    background-size: cover;
-    padding-top: 45vh;
+    background-size: 100%;
+    padding-top: 85%;
   }
   .section-2-grid-1 {
     width: 100%;
