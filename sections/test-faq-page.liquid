@@ -90,16 +90,24 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 
 {% endjavascript %}
 
-<script>
-  // Duplicate the carousel items to achieve the infinite effect
-  const carouselWrapper = document.querySelector('.carousel-wrapper');
-  const carouselItems = document.querySelectorAll('.carousel-item');
+ <script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Duplicate the carousel items to achieve the infinite effect
+      const $carouselWrapper = $('.carousel-wrapper');
+      const $carouselItems = $('.carousel-item');
 
-  carouselItems.forEach(item => {
-    const clone = item.cloneNode(true);
-    carouselWrapper.appendChild(clone);
-  });
-</script>
+      $carouselItems.clone().appendTo($carouselWrapper);
+
+      // Animation
+      function startCarousel() {
+        $carouselWrapper.css({ marginLeft: 0 });
+        $carouselWrapper.animate({ marginLeft: '-100%' }, 20000, 'linear', startCarousel);
+      }
+
+      startCarousel();
+    });
+  </script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
