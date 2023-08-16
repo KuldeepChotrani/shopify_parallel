@@ -104,6 +104,7 @@
 }
 .carousel-item > p {
   font-size: 36px;
+  line-height: 36px;
   padding: 0 !important;
   margin: 0 !important;
 }
