@@ -1,6 +1,6 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {% stylesheet %}
-  
+
    .product-grid {
       display: flex;
       flex-direction: column;
@@ -70,6 +70,7 @@
 
 {% javascript %}
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -88,6 +89,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 {% endjavascript %}
 
@@ -118,19 +120,26 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
 
 {% comment %} {{ collections.all.products[0] | json }}   {% endcomment %}
 
- <div class="feature-video-container">
-    <!-- Video element -->
-    <video class="feature-video-background" autoplay loop muted>
-      <source src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/630e61bd14b2d8f7bacde01f_science%20video-transcode.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<div class="feature-video-container">
+  <!-- Video element -->
+  <video class="feature-video-background" autoplay loop muted>
+    <source
+      src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/630e61bd14b2d8f7bacde01f_science%20video-transcode.mp4"
+      type="video/mp4"
+    >
+    Your browser does not support the video tag.
+  </video>
 
-    <!-- Text content -->
-    <div class="feature-text-container">
-      <h1 class="feature-main-heading">Your Main Heading</h1>
-      <h6 class="feature-subheading">Your Sub Heading</h6>
-    </div>
+  <!-- Text content -->
+  <div class="feature-text-container">
+    <h1 class="feature-main-heading">
+      At Parallel, we target well-aging and balance, grounded in science and innovation.
+    </h1>
+    <h6 class="feature-subheading">
+      We believe the future is precision medicine, and what we're building is vital to that vision
+    </h6>
   </div>
+</div>
 
 <div class="page-width page-margin center">
   {% comment %}
@@ -152,7 +161,9 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
             </a>
             <p class="product-price">{{ product.price | money }}</p>
             <p class="product-description">{{ product.description }}</p>
-            {% if product.metafields.custom.texture %}<span class="product-description">Texture : {{ product.metafields.custom.texture }}</span>{% endif %}
+            {% if product.metafields.custom.texture -%}
+              <span class="product-description">Texture : {{ product.metafields.custom.texture }}</span>
+            {%- endif %}
             <p class="product-description">Sold by {{ product.vendor }}</p>
             <form action="/cart/add" method="post" class="add-to-cart-form">
               {% comment %} <input type="hidden" name="id" value="{{ product.variants.first.id }}"> {% endcomment %}
