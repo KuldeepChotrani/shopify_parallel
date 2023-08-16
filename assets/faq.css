@@ -90,6 +90,7 @@
   .feature-subheading {
     font-size: 20px;
     padding: 0 5%;
+    margin-top: 10px !important;
   }
   .section-2-grid {
     flex-direction: column;
