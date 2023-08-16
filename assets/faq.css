@@ -84,13 +84,14 @@
 
 @media screen and (max-width: 767px) {
   .feature-heading {
-    font-size: 36px;
+    font-size: 28px;
+    line-height: 30px;
     padding: 0 5%;
   }
   .feature-subheading {
-    font-size: 20px;
+    font-size: 14px;
+    line-height: 20px;
     padding: 0 5%;
-    margin-top: 10px !important;
   }
   .section-2-grid {
     flex-direction: column;
@@ -149,7 +150,7 @@
   }
 }
 @media screen and (max-width: 991px) {
-  .section-44 {
+  .section-2 {
     background-position: 25%;
   }
 }
