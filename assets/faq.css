@@ -163,6 +163,22 @@
   align-items: center;
   display: flex;
 }
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+.scroll {
+  animation: scroll 18s linear infinite;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
 
 @media screen and (max-width: 767px) {
   .feature-heading {
