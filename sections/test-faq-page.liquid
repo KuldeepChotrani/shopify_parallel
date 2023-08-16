@@ -69,14 +69,6 @@
 
 {% javascript %}
   
-  
-  
-  
-  
-  
-  
-  
-  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -96,15 +88,18 @@ function Marquee(selector, speed) {
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
 
-
-
-
-
-
-
-
-
 {% endjavascript %}
+
+<script>
+  // Duplicate the carousel items to achieve the infinite effect
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+
+  carouselItems.forEach(item => {
+    const clone = item.cloneNode(true);
+    carouselWrapper.appendChild(clone);
+  });
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -176,49 +171,56 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
     <div class="carousel-item">
       <img
         src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b1087a0e09e8ce57583922_hex-icon.png"
-        alt="Icon" loading="lazy"
+        alt="Icon"
+        loading="lazy"
       >
       <p>rosacea</p>
     </div>
     <div class="carousel-item">
       <img
         src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b1087a0e09e8ce57583922_hex-icon.png"
-        alt="Icon" loading="lazy"
+        alt="Icon"
+        loading="lazy"
       >
       <p>redness</p>
     </div>
     <div class="carousel-item">
       <img
         src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b1087a0e09e8ce57583922_hex-icon.png"
-        alt="Icon" loading="lazy"
+        alt="Icon"
+        loading="lazy"
       >
       <p>melasma</p>
     </div>
     <div class="carousel-item">
       <img
         src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b1087a0e09e8ce57583922_hex-icon.png"
-        alt="Icon" loading="lazy"
+        alt="Icon"
+        loading="lazy"
       >
       <p>eczema</p>
     </div>
     <div class="carousel-item">
       <img
         src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b1087a0e09e8ce57583922_hex-icon.png"
-        alt="Icon" loading="lazy"
+        alt="Icon"
+        loading="lazy"
       >
       <p>discoloration</p>
     </div>
     <div class="carousel-item">
       <img
         src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b1087a0e09e8ce57583922_hex-icon.png"
-        alt="Icon" loading="lazy"
+        alt="Icon"
+        loading="lazy"
       >
       <p>aging</p>
     </div>
     <div class="carousel-item">
       <img
         src="https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b1087a0e09e8ce57583922_hex-icon.png"
-        alt="Icon" loading="lazy"
+        alt="Icon"
+        loading="lazy"
       >
       <p>acne</p>
     </div>
