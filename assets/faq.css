@@ -99,10 +99,6 @@
 .carousel-item {
   display: flex;
   align-items: center;
-  /* padding: 0 20px; */
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
 .carousel-item > p {
   font-size: 36px;
