@@ -3,6 +3,10 @@
   width: 100%;
   height: calc(100vh - 90px);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .feature-video-background {
   position: absolute;
