@@ -35,7 +35,6 @@
   font-size: 48px;
   line-height: 52px;
 }
-
 .feature-subheading {
   color: #2d2a26;
   text-align: center;
@@ -44,6 +43,31 @@
   line-height: 36px;
   max-width: 520px;
 }
+.section-2 {
+  background-image: url("https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64ae931ba42fb7f226ebbffd_science-bg.jpg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+}
+.section-2-grid-1 {
+  width: 50%;
+  text-align: end;
+}
+.section-2-grid-2 {
+  width: 50%;
+}
+.hexagon-image {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
 @media screen and (max-width: 767px) {
   .feature-heading {
     font-size: 36px;
