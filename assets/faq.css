@@ -28,11 +28,11 @@
 }
 .feature-heading {
   color: #2d2a26;
-  margin-top: 0;
   font-family: Quincy cf, sans-serif;
   font-size: 48px;
   line-height: 52px;
   max-width: 1000px;
+  margin: 0 !important;
 }
 .feature-subheading {
   color: #2d2a26;
@@ -40,6 +40,7 @@
   font-size: 22px;
   line-height: 36px;
   max-width: 520px;
+  margin: 0 !important;
 }
 .section-2 {
   background-image: url("https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64ae931ba42fb7f226ebbffd_science-bg.jpg");
