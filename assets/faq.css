@@ -115,13 +115,13 @@
     height: calc(100vh - 60px);
   }
   .feature-heading {
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 28px;
+    line-height: 30px;
     padding: 0 5%;
   }
   .feature-subheading {
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 14px;
+    line-height: 20px;
     padding: 0 5%;
   }
   .section-2-grid {
