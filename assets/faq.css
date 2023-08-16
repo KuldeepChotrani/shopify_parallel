@@ -95,23 +95,6 @@
   animation: scroll 20s infinite linear;
 } */
 
-/* Styles for individual carousel items */
-.carousel-item {
-  display: flex;
-  align-items: center;
-}
-.carousel-item > p {
-  font-size: 36px;
-  line-height: 36px;
-  padding: 0 !important;
-  margin: 0 !important;
-  /* margin-bottom: 6px !important; */
-}
-.carousel-item > img {
-  padding: 0 6px;
-  height: 15px;
-}
-
 /* 
 @keyframes scroll {
   0% {
@@ -127,7 +110,7 @@
   grid-column-gap: 1rem;
   background-color: #e18672;
   margin-bottom: 0;
-  padding: 10px 0;
+  padding: 20px 0;
   display: flex;
   overflow: hidden;
 }
@@ -147,20 +130,21 @@
   flex: none;
   align-self: center;
 }
-
-/* .paragraph-72 {
-  flex: 0 auto;
-  font-family: Quincy cf, sans-serif;
-  font-size: 36px;
-  font-weight: 100;
-  line-height: 44px;
-} */
-
-/* .div-block-158 {
-  justify-content: center;
-  align-items: center;
+.carousel-item {
   display: flex;
-} */
+  align-items: center;
+}
+.carousel-item > p {
+  font-size: 36px;
+  line-height: 36px;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-bottom: 6px !important;
+}
+.carousel-item > img {
+  padding: 0 6px;
+  height: 15px;
+}
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -246,6 +230,9 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+  }
+  .marquee-2 {
+    padding: 12px 0;
   }
   .carousel-item > p {
     font-size: 18px;
