@@ -139,7 +139,7 @@
   line-height: 36px;
   padding: 0 !important;
   margin: 0 !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 7px !important;
 }
 .carousel-item > img {
   padding: 0 6px;
@@ -237,6 +237,7 @@
   .carousel-item > p {
     font-size: 18px;
     line-height: 18px;
+    margin-bottom: 0 !important;
   }
 }
 @media screen and (max-width: 991px) {
