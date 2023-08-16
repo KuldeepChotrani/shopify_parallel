@@ -89,7 +89,7 @@
     font-size: 20px;
     padding: 0 5%;
   }
-    .section-2-grid {
+  .section-2-grid {
     flex-direction: column;
   }
   .section-2 {
@@ -103,6 +103,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    display: none;
   }
   .section-2-grid-2 {
     width: 100%;
@@ -137,6 +138,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    display: none;
   }
   .section-2-grid-2 {
     width: 100%;
