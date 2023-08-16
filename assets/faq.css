@@ -107,6 +107,7 @@
   line-height: 36px;
   padding: 0 !important;
   margin: 0 !important;
+  margin-bottom: 6px !important;
 }
 .carousel-item > img {
   padding: 0 10px;
