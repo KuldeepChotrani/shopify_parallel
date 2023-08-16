@@ -111,7 +111,7 @@
     flex-direction: column;
   }
   .section-2 {
-    background-image: url(https://uploads-ssl.webflow.com/601b935…/64b112d…_face-bg.jpg);
+    background-image: url("https://uploads-ssl.webflow.com/601b9353941a4535b6341460/64b112dfa27271e24934e9e0_face-bg.jpg");
     background-position: 50% 0;
     background-size: cover;
     padding-top: 45vh;
