@@ -26,7 +26,7 @@
   color: #2d2a26;
   text-align: center;
   margin-top: 0;
-  padding: 2% 5%;
+  padding: 0 15%;
   font-family: Quincy cf, sans-serif;
   font-size: 48px;
   line-height: 52px;
@@ -39,6 +39,29 @@
   font-family: Neue-Haas Regular, sans-serif;
   font-size: 22px;
   line-height: 36px;
+}
+@media screen and (max-width: 767px) {
+  .feature-heading {
+    font-size: 36px;
+  }
+  .feature-subheading {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .feature-video-container {
+    height: calc(100vh - 60px);
+  }
+  .feature-heading {
+    margin-bottom: 20px;
+    padding-bottom: 5%;
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .feature-subheading {
+    font-size: 18px;
+    line-height: 23px;
+  }
 }
 
 .question {
