@@ -75,6 +75,7 @@
   
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -93,6 +94,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 
 
@@ -153,8 +155,10 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
       >
     </div>
     <div class="section-2-grid-2">
-      <h1 class="feature-heading">An imbalanced skin microbiome is the cause of skin issues.</h1>
-      <h6 class="feature-subheading">
+      <h1 class="feature-heading" style="max-width: fit-content">
+        >An imbalanced skin microbiome is the cause of skin issues.
+      </h1>
+      <h6 class="feature-subheading" style="max-width: fit-content">
         The skin microbiome is an ecosystem of bacteria, viruses, fungi, and other microbes that inhabit your skin. When
         your microbiome is in balance, your skin is resilient, clear, and radiant. When it's not in balance, a slew of
         issues can unfold, including blemishes & breakouts, inflammation, redness, sensitivity, changes in texture,
