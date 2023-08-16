@@ -99,10 +99,8 @@
     line-height: 23px;
     padding: 0 5%;
   }
-  .section-2-grid {
-    flex-direction: column;
-  }
   .section-2 {
+    flex-direction: column;
     background-image: url(https://uploads-ssl.webflow.com/601b935…/64b112d…_face-bg.jpg);
     background-position: 50% 0;
     background-size: cover;

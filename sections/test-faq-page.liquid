@@ -74,6 +74,7 @@
   
   
   
+  
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
@@ -92,6 +93,7 @@ function Marquee(selector, speed) {
   }, 0);
 }
 window.addEventListener('load', Marquee('.marquee', 0.2))
+
 
 
 
@@ -135,8 +137,10 @@ window.addEventListener('load', Marquee('.marquee', 0.2))
     >
     Your browser does not support the video tag.
   </video>
-  <h1 class="feature-heading">At Parallel, we target well-aging and balance, grounded in science and innovation.</h1>
-  <h6 class="feature-subheading">
+  <h1 class="feature-heading" style="text-align: center">
+    At Parallel, we target well-aging and balance, grounded in science and innovation.
+  </h1>
+  <h6 class="feature-subheading" style="text-align: center">
     We believe the future is precision medicine, and what we're building is vital to that vision
   </h6>
 </div>
