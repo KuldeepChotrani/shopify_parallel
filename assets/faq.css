@@ -82,25 +82,27 @@
   object-fit: contain;
 }
 
-.carousel-container {
+/* .carousel-container {
   background-color: #e18672;
   padding: 10px;
   text-align: center;
   overflow: hidden;
 }
 
-/* Styles for the carousel wrapper */
 .carousel-wrapper {
   display: flex;
   flex-wrap: nowrap;
   animation: scroll 20s infinite linear;
-}
+} */
 
 /* Styles for individual carousel items */
 .carousel-item {
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  /* padding: 0 20px; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .carousel-item > p {
   font-size: 36px;
@@ -150,19 +152,19 @@
   align-self: center;
 }
 
-.paragraph-72 {
+/* .paragraph-72 {
   flex: 0 auto;
   font-family: Quincy cf, sans-serif;
   font-size: 36px;
   font-weight: 100;
   line-height: 44px;
-}
+} */
 
-.div-block-158 {
+/* .div-block-158 {
   justify-content: center;
   align-items: center;
   display: flex;
-}
+} */
 @keyframes scroll {
   from {
     transform: translateX(0);
