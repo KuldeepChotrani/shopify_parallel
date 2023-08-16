@@ -63,9 +63,9 @@
   width: 50%;
 }
 .hexagon-image {
-    width: 90%;
-    height: auto;
-    object-fit: contain;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 767px) {
@@ -74,6 +74,9 @@
   }
   .feature-subheading {
     font-size: 20px;
+  }
+  .section-2 {
+    background-position: 30%;
   }
 }
 @media screen and (max-width: 479px) {
@@ -88,6 +91,18 @@
     font-size: 18px;
     line-height: 23px;
     padding: 0 5%;
+  }
+  .section-2 {
+    flex-direction: column;
+    background-image: url(https://uploads-ssl.webflow.com/601b935…/64b112d…_face-bg.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+    padding-top: 45vh;
+  }
+}
+@media screen and (max-width: 991px) {
+  .section-44 {
+    background-position: 25%;
   }
 }
 
