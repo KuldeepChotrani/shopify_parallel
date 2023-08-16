@@ -145,9 +145,6 @@
     justify-content: center;
     align-items: center;
   }
-  .carousel-item {
-    font-size: 28px;
-  }
 }
 @media screen and (max-width: 479px) {
   .feature-video-container {
