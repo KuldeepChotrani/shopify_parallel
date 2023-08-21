@@ -208,6 +208,22 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1692608998a0a529da": {
+      "type": "apps",
+      "blocks": {
+        "96aa8620-3786-47dc-a999-f379926f0507": {
+          "type": "shopify:\/\/apps\/shop-gpt\/blocks\/display_date\/98cab7cc-e239-4a14-a9b8-dcdfe8b75931",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "96aa8620-3786-47dc-a999-f379926f0507"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -216,6 +232,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "1692608998a0a529da"
   ]
 }
